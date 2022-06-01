@@ -1,0 +1,33 @@
+version: "3.7"
+
+services:
+  database: #ESSE É O NOME DO SERVICE QUE DEVE ESTAR NO ARQUIVO DE CRIAÇÃO DE CONEXÃO
+    image: postgres
+    container_name: database_ignite
+    restart: always
+    ports: 
+      - 5432:5432
+    environment:
+      - POSTGRES_USER=docker
+      - POSTGRES_PASSWORD=ignite
+      - POSTGRES_DB=rentx
+    volumes:
+      - pgdata:/data/postgres
+
+  app:
+    build: .
+    container_name: rentx
+    restart: always
+    ports: 
+      - 3335:3335
+      - 9229:9229 #Você pode inserir essa porta tbm pra poder usar o debug
+    volumes: 
+      - .:/usr/app
+    links: 
+      - database
+    depends_on:
+      - database
+
+volumes:
+  pgdata:
+    driver: local
