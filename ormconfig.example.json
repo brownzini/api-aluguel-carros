@@ -1,10 +1,10 @@
 {
     "type": "postgres",
-    "port": 7296,
-    "host": "localhost",
-    "username": "docker",
-    "password": "ignite",
-    "database": "rentx",
+    "port": 5432,
+    "host": "ec2-3-234-131-8.compute-1.amazonaws.com",
+    "username": "tlkavskspfzgws",
+    "password": "590a0039426e7f527d42eaf46df2d6b2e3997f55b86cd3b1f9e9b1b531641972",
+    "database": "dc7etqvr0ui6cj",
     "entities": ["./dist/modules/**/infra/typeorm/entities/*.ts"],
     "migrations": ["./dist/shared/infra/typeorm/migrations/*.ts"],
     "cli": {
