@@ -2,9 +2,9 @@
     "type": "postgres",
     "port": 5432,
     "host": "ec2-3-234-131-8.compute-1.amazonaws.com",
-    "username": "tlkavskspfzgws",
-    "password": "590a0039426e7f527d42eaf46df2d6b2e3997f55b86cd3b1f9e9b1b531641972",
-    "database": "dc7etqvr0ui6cj",
+    "username": "tsbdoeghzalnbo",
+    "password": "013060d69ca1f29780054f7a9ea741edf21ebbe97670bec1ffc5ae054cf1db85",
+    "database": "d7t660rik24vpp",
     "entities": ["./dist/modules/**/infra/typeorm/entities/*.ts"],
     "migrations": ["./dist/shared/infra/typeorm/migrations/*.ts"],
     "cli": {

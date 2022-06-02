@@ -8,26 +8,27 @@ services:
     ports: 
       - 5432:5432
     environment:
-      - POSTGRES_USER=docker
-      - POSTGRES_PASSWORD=ignite
-      - POSTGRES_DB=rentx
-    volumes:
-      - pgdata:/data/postgres
-
+      - POSTGRES_USER=sqrhidrgreukmo
+      - POSTGRES_PASSWORD=4047a26e2a296c0f21385327909028729f196c782338340d832663b301b11e39
+      - POSTGRES_NAME=d44vjnfn1qiqrb
   app:
     build: .
     container_name: rentx
     restart: always
+    command: sh -c "npm run migrate run && npm run start"
     ports: 
       - 3335:3335
-      - 9229:9229 #Você pode inserir essa porta tbm pra poder usar o debug
     volumes: 
       - .:/usr/app
     links: 
       - database
     depends_on:
       - database
-
+    evironment: 
+      DB_HOST: ec2-3-234-131-8.compute-1.amazonaws.com
+      DB_USER: sqrhidrgreukmo
+      DB_PASS: 4047a26e2a296c0f21385327909028729f196c782338340d832663b301b11e39
+      DB_NAME: d44vjnfn1qiqrb
 volumes:
   pgdata:
     driver: local
