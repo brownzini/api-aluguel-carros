@@ -8,16 +8,16 @@ services:
     ports: 
       - 5432:5432
     environment:
-      - POSTGRES_USER=sqrhidrgreukmo
-      - POSTGRES_PASSWORD=4047a26e2a296c0f21385327909028729f196c782338340d832663b301b11e39
-      - POSTGRES_NAME=d44vjnfn1qiqrb
+      - POSTGRES_USER=lebkkwcevdgwef
+      - POSTGRES_PASSWORD=1d1de91a795d6cb130d74915d374abd31fc19952bf775db5ead6945adc9e2fea
+      - POSTGRES_NAME=d7e33mqg5ottr8
   app:
     build: .
     container_name: rentx
     restart: always
     command: sh -c "npm run migrate run && npm run start"
     ports: 
-      - 3335:3335
+      - 3000:3000
     volumes: 
       - .:/usr/app
     links: 
@@ -25,10 +25,10 @@ services:
     depends_on:
       - database
     evironment: 
-      DB_HOST: ec2-3-234-131-8.compute-1.amazonaws.com
-      DB_USER: sqrhidrgreukmo
-      DB_PASS: 4047a26e2a296c0f21385327909028729f196c782338340d832663b301b11e39
-      DB_NAME: d44vjnfn1qiqrb
+      DB_HOST: ec2-54-211-255-161.compute-1.amazonaws.com
+      DB_USER: lebkkwcevdgwef
+      DB_PASS: 1d1de91a795d6cb130d74915d374abd31fc19952bf775db5ead6945adc9e2fea
+      DB_NAME: d7e33mqg5ottr8
 volumes:
   pgdata:
     driver: local
